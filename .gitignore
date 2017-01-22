@@ -1,4 +1,33 @@
+# Node
+node_modules*
+npm-shrinkwrap.json
+config/runtime.json
+config/runtime*
+app/*
 
-skill-sample-nodejs-calendar-reader.pdf
+# Ignored Extensions
+*.diff
+*.log
+*.swp
+*.rej
 
-Archive.zip
+# IDEs
+.cache
+.project
+.settings
+.idea
+
+# MongoDB
+mongodb-dump
+
+# Grunt
+*/dist/
+
+# Bower
+app/bower_components
+
+# Istanbul
+coverage/
+
+.DS_Store
+*.zip
