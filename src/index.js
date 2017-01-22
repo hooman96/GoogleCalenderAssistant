@@ -11,12 +11,12 @@ var states = {
 var alexa;
 
 //OPTIONAL: replace with "amzn1.ask.skill.[your-unique-value-here]";
-var APP_ID = undefined; 
+var APP_ID = undefined;
 
 // URL to get the .ics from, in this instance we are getting from Stanford however this can be changed
 var URL = "http://events.stanford.edu/eventlist.ics";
 
-// Skills name 
+// Skills name
 var skillName = "Events calendar:";
 
 // Message when the skill is first called
@@ -33,10 +33,10 @@ var NoDataMessage = "Sorry there aren't any events scheduled. Would you like to 
 // Used to tell user skill is closing
 var shutdownMessage = "Ok see you again soon.";
 
-// Message used when only 1 event is found allowing for difference in punctuation 
+// Message used when only 1 event is found allowing for difference in punctuation
 var oneEventMessage = "There is 1 event ";
 
-// Message used when more than 1 event is found allowing for difference in punctuation 
+// Message used when more than 1 event is found allowing for difference in punctuation
 var multipleEventMessage = "There are %d events ";
 
 // text used after the number of events has been said
@@ -85,7 +85,7 @@ var newSessionHandlers = {
 
     'Unhandled': function () {
         this.emit(':ask', HelpMessage, HelpMessage);
-    },
+    }
 };
 
 // Create a new handler with a SEARCH state
@@ -104,7 +104,7 @@ var startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
     },
 
     'searchIntent': function () {
-        // Declare variables 
+        // Declare variables
         var eventList = new Array();
         var slotValue = this.event.request.intent.slots.date.value;
         var parent = this;
@@ -128,7 +128,7 @@ var startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
             }
             // Check we have data
             if (eventList.length > 0) {
-                // Read slot data and parse out a usable date 
+                // Read slot data and parse out a usable date
                 var eventDate = getDateFromSlot(slotValue);
                 // Check we have both a start and end date
                 if (eventDate.startDate && eventDate.endDate) {
